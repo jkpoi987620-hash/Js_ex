@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>CINE Q | Movie Detail</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/sub-movie.css" />
+  <style>
+    body {
+  background: linear-gradient(#05070f, #0b1220);
+  color: #fff;
+  font-family: Pretendard;
+}
+
+/* HERO (밀도형) */
+.hero.dense {
+  padding: 140px 80px 80px;
+  position: relative;
+}
+
+.hero-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats span {
+  margin-right: 14px;
+  font-size: 14px;
+  color: #d1d5db;
+}
+
+/* INFO GRID */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 60px 80px;
+}
+
+.info-card {
+  background: #0f172a;
+  padding: 26px;
+  border-radius: 14px;
+}
+
+/* SYNOPSIS */
+.synopsis-section {
+  padding: 80px;
+}
+
+.stills {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* SCHEDULE */
+.schedule {
+  padding: 80px;
+}
+
+.schedule-card {
+  background: #020617;
+  border-radius: 14px;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+/* RECOMMEND */
+.recommend {
+  padding: 80px;
+}
+
+.movie-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.movie-card {
+  height: 260px;
+  background: #1e293b;
+  border-radius: 14px;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 60px;
+  color: #6b7280;
+}
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">CINE <span>Q</span></div>
+  <nav>
+    <a href="#">현재상영작</a>
+    <a href="#">상영시간표</a>
+    <a href="#">극장안내</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero dense">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <span class="label">NOW PLAYING</span>
+      <h1>파묘</h1>
+
+      <div class="stats">
+        <span>⭐ 8.9</span>
+        <span>👥 9,200,000+</span>
+        <span>15세 이상</span>
+      </div>
+
+      <p class="tagline">
+        건드려서는 안 될 것을 깨웠다
+      </p>
+
+      <div class="cta">
+        <button class="btn primary">예매하기</button>
+        <button class="btn outline">트레일러</button>
+      </div>
+    </div>
+
+    <img class="poster" src="https://via.placeholder.com/260x380" />
+  </div>
+</section>
+
+<!-- INFO CARDS -->
+<section class="info-grid">
+  <div class="info-card">
+    <h3>기본 정보</h3>
+    <ul>
+      <li><b>감독</b> 장재현</li>
+      <li><b>출연</b> 최민식 · 김고은 · 유해진</li>
+      <li><b>장르</b> 미스터리 / 오컬트</li>
+      <li><b>러닝타임</b> 134분</li>
+    </ul>
+  </div>
+
+  <div class="info-card">
+    <h3>기술 포맷</h3>
+    <div class="badges">
+      <span>2D</span>
+      <span>Dolby Atmos</span>
+      <span>4K Projection</span>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h3>관람 포인트</h3>
+    <p>
+      한국 오컬트 장르의 정점을 찍은 작품.  
+      사운드와 공간 연출을 극장에서 체험해야 완성된다.
+    </p>
+  </div>
+</section>
+
+<!-- SYNOPSIS -->
+<section class="synopsis-section">
+  <h2>시놉시스</h2>
+  <div class="synopsis-wrap">
+    <p>
+      수상한 묘를 이장한 뒤, 설명할 수 없는 사건들이 발생한다.  
+      건드려서는 안 될 금기를 건드린 순간, 모든 것이 뒤틀리기 시작한다.
+    </p>
+
+    <div class="stills">
+      <img src="https://via.placeholder.com/260x160" />
+      <img src="https://via.placeholder.com/260x160" />
+      <img src="https://via.placeholder.com/260x160" />
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule">
+  <h2>상영 시간표</h2>
+
+  <div class="schedule-card">
+    <div class="theater">FOCUS</div>
+    <div class="times">
+      <button>11:20</button>
+      <button>14:00</button>
+      <button>18:30</button>
+      <button>21:10</button>
+    </div>
+  </div>
+
+  <div class="schedule-card">
+    <div class="theater">COZY</div>
+    <div class="times">
+      <button>12:40</button>
+      <button>16:10</button>
+      <button>20:40</button>
+    </div>
+  </div>
+</section>
+
+<!-- RECOMMEND -->
+<section class="recommend">
+  <h2>함께 보면 좋은 영화</h2>
+
+  <div class="movie-row">
+    <div class="movie-card"></div>
+    <div class="movie-card"></div>
+    <div class="movie-card"></div>
+    <div class="movie-card"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  © CINE Q. All Rights Reserved.
+</footer>
+
+</body>
+</html>

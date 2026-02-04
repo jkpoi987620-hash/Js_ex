@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>페이지 스크롤양 표시</title>
+  <style>
+    /*스크롤바 감추기*/
+    ::-webkit-scrollbar{
+      display: none;
+    }
+    #bar {
+      background-color: #0bd;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 10px;
+      /*width: 100%;*/
+    }
+
+    article {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      line-height: 1.8;
+    }
+  </style>
+  <script>
+    //모든 리소스가 load(로드)된 후에 코드 실행
+    window.addEventListener("load", () => {
+      window.addEventListener("scroll", () => {
+        //스크롤 이동값(스크롤 된 양), window.scrollY
+        const scrolled = window.scrollY;
+        //console.log(scrolled)
+        //document.documentElement = html요소
+        //scrollHeight = 해당요소의 전체 높이(안보이는 영역포함)
+
+        //페이지 전체 높이
+        const pageH = document.documentElement.scrollHeight;
+        //console.log(pageH)
+
+        //clientHeight = 요소의 높이
+        //표시영역 높이
+        const viewH = document.documentElement.clientHeight;
+
+        //비례식 : 스크롤한 비율 = 스크롤 양 / (페이지 전체 높이 - 표시 영역 높이) * 100
+        const percentage = scrolled / (pageH - viewH) * 100;
+        console.log(percentage)
+
+        //#bar의 넓이값으로 percentage 값을 대입
+        document.querySelector("#bar").style.width = `${percentage}%`;
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <div id="bar"></div>
+
+  <article>
+    <h1>은하철도의 밤</h1>
+    <p>미야자와 겐지</p>
+
+    <h2>1. 오후 수업</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione vel non quod, cumque eveniet nostrum
+      perspiciatis dolores voluptatibus temporibus delectus, laboriosam fuga dolorem iste rem minima id quidem ipsam
+      alias?
+      Nam dolores eius autem animi nostrum omnis hic aliquam, a provident et maxime excepturi totam! Mollitia voluptate
+      obcaecati asperiores quam expedita vitae quibusdam doloremque iure quia quos vero, minima a.
+      Eius quasi a eos beatae, architecto eum consequatur molestiae pariatur sit excepturi deleniti perspiciatis
+      obcaecati necessitatibus voluptatum aut, error delectus odio dicta doloremque deserunt commodi! Et facere esse
+      minima vero.
+      Exercitationem illo ad aut porro officia ullam quaerat optio, quisquam eos nobis molestiae accusantium commodi
+      asperiores aperiam quibusdam nam voluptate necessitatibus aliquid! Nostrum nihil ipsam eaque consequatur porro
+      corrupti corporis?
+      At nisi quod necessitatibus, tenetur veniam numquam! Provident delectus deserunt doloribus ipsum voluptate
+      consequuntur totam quod tempore nisi beatae animi, repudiandae modi dignissimos maxime magnam, incidunt obcaecati
+      velit soluta adipisci.
+      Architecto aspernatur tempora sint laborum ipsa optio quia dolorum, soluta totam, enim eligendi aperiam ipsam
+      accusamus atque fugit? A cum autem laborum quo distinctio officia laudantium doloribus quod at aperiam?
+      Nostrum itaque recusandae, fugiat porro maxime molestias facilis. Odio, perspiciatis? Mollitia sint ullam delectus
+      dignissimos, beatae illo quos eius tempora molestiae dolore quae, natus magni aspernatur veniam dolorum corporis
+      commodi?
+      Excepturi iure sequi molestiae sapiente dicta non libero ducimus ut alias voluptatum mollitia repudiandae hic
+      aspernatur dolore eligendi, facere esse quasi magni unde. Nostrum quibusdam unde doloremque, possimus culpa
+      deserunt.
+      Similique, quo quos delectus corporis omnis eius laborum modi architecto recusandae quasi nulla voluptatem totam
+      voluptatum eum accusantium hic! Modi qui magni, nulla voluptates alias porro perspiciatis voluptatum nobis! Fuga.
+      Omnis culpa neque nulla cum quod ducimus. Porro distinctio voluptatem nulla quia voluptate aut magni nemo sunt
+      repellendus assumenda. Tempore voluptate veniam amet distinctio tenetur velit nam consectetur repellat at?</p>
+
+    <h2>2. 활판 인쇄소</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi non totam laboriosam tempora quisquam
+      accusantium a, impedit saepe. Qui consequuntur a, placeat magni aut facere culpa natus! Ex, sed praesentium!
+      Dignissimos eos assumenda fugiat quasi voluptatem eligendi sit, officia, praesentium voluptates libero, id debitis
+      dolorum consequatur saepe quae iusto quo facere quis et corrupti? Nulla nesciunt fugit dolor facilis saepe.
+      Itaque optio corporis dolore. Accusantium nesciunt ea, tempora illum unde odit ut nihil ad! Alias expedita
+      explicabo, harum nesciunt aspernatur porro eveniet repellat numquam provident inventore, commodi optio quasi
+      laudantium.
+      Ipsam, temporibus totam. Repellendus, dolorum praesentium minima cum amet accusantium tempora eaque obcaecati
+      placeat temporibus, neque iusto facere explicabo laborum? Fuga dignissimos corporis sunt adipisci tempore omnis
+      aliquid nisi quas!
+      Pariatur ex laborum doloremque ullam! Dolores quis eligendi rerum doloribus ea quisquam, nesciunt alias quasi.
+      Nihil vero quidem, laboriosam esse fuga labore pariatur! Nostrum odit iste quod? Voluptatem, iure cum.
+      Alias distinctio aspernatur eius recusandae nihil quae nisi delectus quos quidem quis saepe repellat, assumenda
+      voluptatem voluptatibus rem odio aliquid. Nesciunt tempore expedita rerum? Corrupti totam blanditiis tenetur at
+      qui.
+      Illum iusto porro quaerat! Assumenda saepe, praesentium quae soluta odit quia fuga magnam ad sapiente voluptas
+      magni sed incidunt reiciendis beatae eveniet maxime corrupti quod dolorum quam ratione. Adipisci, modi!
+      Officia totam velit minus aperiam ea voluptate similique ducimus incidunt optio illum, adipisci provident
+      doloremque, reiciendis perferendis voluptatum praesentium dolorem quos consequuntur! Eius soluta eos quidem,
+      incidunt repudiandae itaque in!
+      Nisi aliquam, dolores provident consequuntur voluptatum ducimus fuga velit, distinctio, iure explicabo natus! Hic
+      placeat autem vero laboriosam, pariatur qui. Harum deleniti magnam eligendi doloremque odio, dignissimos excepturi
+      est nemo?
+      Quibusdam inventore reprehenderit quam, enim illum sapiente fugit qui error libero, odit nemo recusandae nesciunt
+      fugiat est culpa. Unde natus quae inventore sit pariatur cum molestiae aliquid temporibus odit necessitatibus?</p>
+
+    <h2>3. 집</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, exercitationem impedit sit ipsum deserunt
+      consectetur similique repellendus tempore neque veritatis alias eligendi odio fugit voluptatum repellat soluta
+      dignissimos perferendis unde.
+      Maxime iste asperiores doloribus molestias. Laudantium fugiat architecto excepturi quis quae tempora consectetur
+      nisi repudiandae aspernatur harum cum eius minus beatae sunt sapiente sit corporis, perspiciatis quod aut maxime
+      repellat.
+      Dolorem non alias corrupti assumenda atque ipsam quae vel possimus vitae quisquam accusamus voluptates et iusto
+      quam rem ad dignissimos magni, officiis rerum nesciunt consectetur eligendi facilis pariatur. Fugiat, fugit.
+      Provident fugit corporis numquam saepe at, quibusdam deserunt, dolore, expedita voluptatum totam in! Corrupti
+      beatae sapiente aut doloribus quas facilis nostrum explicabo, error provident! Adipisci molestias asperiores error
+      accusamus repudiandae.
+      Rerum, minima odit! Quo omnis, minus qui, id ex atque temporibus, minima delectus impedit vero consequuntur
+      accusantium beatae tenetur nihil! Eum cumque, saepe commodi repudiandae consequatur dolorum. Officia, facere?
+      Sequi?
+      Porro animi voluptatum molestias debitis sed excepturi, delectus accusantium est eius, in pariatur non minima ad.
+      Voluptatum soluta, quos ducimus provident adipisci totam assumenda nesciunt, ipsam dignissimos dolor distinctio
+      recusandae!
+      Nemo porro perferendis numquam libero. Minus laborum enim tenetur ducimus sapiente, est quibusdam explicabo totam
+      neque blanditiis recusandae! Dolorum expedita voluptatum provident vitae similique saepe ipsam atque officiis
+      asperiores iste.
+      Quibusdam hic facilis vero explicabo aspernatur deleniti modi mollitia necessitatibus quas nobis expedita, porro
+      quisquam, architecto nulla! Blanditiis possimus tenetur ut nostrum tempore explicabo rem aliquid amet provident
+      optio? Quia.
+      Rem animi delectus nostrum velit voluptatem explicabo, ipsa dolorem fugiat minus nesciunt necessitatibus eveniet
+      doloribus, inventore at, aliquid unde. Asperiores culpa quia vel ullam laudantium dolores minima harum fuga
+      dolore.
+      Dignissimos, cumque a perferendis pariatur magni qui velit quia, eaque aut fugiat at vitae, similique perspiciatis
+      molestiae unde ad nostrum expedita sit commodi modi quod soluta obcaecati. Eos, cum corrupti?</p>
+
+    <h2>4. 켄타우루 축제의 밤</h2>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, commodi quia officia sit quos debitis magnam
+      quidem magni sed iure doloribus. Odio quae quis magnam, nesciunt molestias quos autem distinctio!
+      Adipisci pariatur eveniet error voluptatum quidem quia cumque maxime praesentium! Ea numquam, eius distinctio
+      dolore in doloribus nemo. Molestiae temporibus ipsam repellendus esse nisi veritatis autem laudantium quis
+      cupiditate officia.
+      Non temporibus corrupti natus quos accusamus dignissimos quam dicta dolores reiciendis nulla, eveniet repudiandae
+      doloribus quae veniam deserunt impedit sed necessitatibus, maiores cum ullam, doloremque ut amet! Numquam, totam
+      in.
+      Alias dolores, laboriosam quae vero excepturi explicabo cupiditate soluta fugit veritatis mollitia, saepe est quis
+      obcaecati architecto repellat itaque sit natus ab voluptatem nobis labore in? Ut ex ea necessitatibus?
+      Ea, minima cumque dolorem aut impedit odit molestiae quisquam qui, omnis repellendus culpa, molestias voluptates
+      quasi cum. Quasi laborum, fuga sunt eos, laboriosam enim, accusantium perferendis quod voluptas non a.
+      Est impedit quaerat ipsum cum, illum eos ipsam debitis laboriosam voluptatem quo cumque dolor sit consequuntur
+      maxime voluptatum error expedita, libero, beatae repellendus dolore delectus ducimus ratione? Voluptatibus, et
+      asperiores.
+      In assumenda exercitationem laudantium unde culpa voluptatem doloribus ut explicabo, ipsam beatae obcaecati hic
+      minima possimus facilis. Ipsa architecto impedit illum repellat aliquid blanditiis ducimus quos rem dolorem
+      cupiditate? Animi!
+      Possimus, vitae minima provident enim voluptate voluptatibus mollitia veritatis, cupiditate fuga architecto ab
+      facilis cumque nemo vel, pariatur exercitationem et quae eos nostrum. Non ut esse similique voluptate voluptas
+      eos?
+      Sed, earum ut. Id nam quae omnis saepe odio possimus nulla dolorem nemo. Natus doloremque temporibus odit
+      excepturi quia doloribus magnam consequuntur iste similique, ea laboriosam ab nihil pariatur harum.
+      Consequatur fugiat fuga dolorum enim eius, velit impedit reprehenderit molestias dignissimos facere sequi expedita
+      omnis voluptatem minus nulla unde magnam! Excepturi asperiores soluta deserunt voluptatem. Possimus tempore nihil
+      accusantium nemo!</p>
+  </article>
+
+</body>
+
+</html>

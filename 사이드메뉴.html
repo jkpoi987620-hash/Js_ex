@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://kit.fontawesome.com/632d3e2496.js" crossorigin="anonymous"></script>
+
+  <link href="reset.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #111;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      background: url(images/image1.jpg) center/cover;
+      /*축약형*/
+      /*콘텐츠 가운데 정렬*/
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      /*부모 블록 기준 잡기*/
+      transition: 0.2s;
+    }
+
+    .container .txt {
+      display: none;
+      text-align: center;
+      color: #111;
+      /*background-color: rgba(255,255,255,.2);*/
+    }
+
+    .container .txt.on {
+      display: block;
+    }
+
+    .txt>h1 {
+      font-size: 36px;
+    }
+
+    .txt>p {
+      font-weight: 500;
+      font-size: 24px;
+      margin: 40px 0;
+    }
+
+    .txt>button {
+      background-color: transparent;
+      /*버튼색 초기화*/
+      padding: 8px 32px;
+      /*버튼 여백 늘리기(크기)*/
+      border: 2px solid #111;
+      /*버튼 선 넣어주기*/
+      font-weight: bold;
+      cursor: pointer;
+      /*누르는 이미지*/
+    }
+
+    .txt>button:hover {
+      background-color: #111;
+      color: #fff;
+    }
+
+    .container>.dot {
+      position: absolute;
+      /*원하는 자식 띄우기*/
+      right: 10px;
+      /*옮겨주기*/
+    }
+
+    /*동그라미 효과*/
+    .container>.dot>li {
+      width: 15px;
+      height: 15px;
+      border: 1px solid #111;
+      border-radius: 50%;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+
+    .container>.dot>li.active {
+      /*액티브 클래스 추가해서 색 칠해주기*/
+      background-color: #111;
+    }
+
+    /*사이드메뉴*/
+    .side-menu {
+      position: fixed;
+      left: -300px;
+      /*사이드메뉴를 화면 밖으로 이동*/
+      width: 300px;
+      height: 100%;
+      z-index: 1;
+      /*컨테이너에 가려지지 않게 z-index를 설정(프레임 올려주기)*/
+      background-color: gray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s;
+    }
+
+    .side-menu>.menuIcon {
+      position: absolute;
+      top: 10px;
+      right: -45px;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+
+    /*사이드 메뉴에 온 클래스가 추가 되면 사이드 메뉴가 화면 안쪽으로 이동*/
+    .side-menu.on {
+      left: 0;
+    }
+
+    /*사이드메뉴 아이콘에 온 클래스가 추가 되면 메뉴아이콘을 사이드 안쪽으로 이동*/
+    .side-menu.on>.menuIcon {
+      right: 10px;
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: #111;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+
+    .side-menu.on .bar1 {
+      transform: rotate(-45deg) translate(-9px, 6px);
+      background-color: #fff;
+    }
+
+    .side-menu.on .bar2 {
+      opacity: 0;
+    }
+
+    .side-menu.on .bar3 {
+      transform: rotate(45deg) translate(-8px, -8px);
+      background-color: #fff;
+    }
+
+    .side-menu>.wrap {
+      width: 50%;
+    }
+
+    .side-menu .menu {
+      border-bottom: 1px solid #fff;
+    }
+
+    .side-menu .menu li {
+      margin-bottom: 40px;
+      color: #fff;
+    }
+
+    .side-menu .menu li:last-child {
+      /*li의 마지막 요소만 아래부분 마진 줄이기*/
+      margin-bottom: 20px;
+    }
+
+    .side-menu p {
+      font-size: 12px;
+      color: #fff;
+      margin: 20px 0;
+    }
+
+    .side-menu .icon a {
+      display: inline-block;
+      color: #fff;
+      margin-right: 5px;
+      width: 30px;
+      height: 30px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="side-menu">
+    <div class="menuIcon">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <div class="wrap">
+      <ul class="menu">
+        <li><a href="#">about</a></li>
+        <li><a href="#">news</a></li>
+        <li><a href="#">portfolio</a></li>
+        <li><a href="#">board</a></li>
+        <li><a href="#">album</a></li>
+        <li><a href="#">contact</a></li>
+      </ul>
+      <p>Lorem ipsum dolor sit amet consectetur</p>
+      <div class="icon">
+        <a href="#"><i class="far fa-user"></i></a>
+        <a href="#"><i class="far fa-user"></i></a>
+        <a href="#"><i class="far fa-user"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="wrap">
+      <div class="txt on">
+        <h1 class="logo">LOGO1</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur<br> adipisicing elit. Ipsa, nisi!
+        </p>
+        <button type="button">BUTTON</button>
+      </div>
+      <div class="txt">
+        <h1 class="logo">LOGO2</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur<br> adipisicing elit. Ipsa, nisi!
+        </p>
+        <button type="button">BUTTON</button>
+      </div>
+      <div class="txt">
+        <h1 class="logo">LOGO3</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur<br> adipisicing elit. Ipsa, nisi!
+        </p>
+        <button type="button">BUTTON</button>
+      </div>
+      <div class="txt">
+        <h1 class="logo">LOGO4</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur<br> adipisicing elit. Ipsa, nisi!
+        </p>
+        <button type="button">BUTTON</button>
+      </div>
+    </div>
+    <ul class="dot">
+      <li class="active" data-src="images/image1.jpg"></li><!--액티브 클래스 추가해서 색 칠해주기-->
+      <li data-src="images/image2.jpg"></li>
+      <li data-src="images/image3.jpg"></li>
+      <li data-src="images/image4.jpg"></li>
+    </ul>
+  </div>
+  <script>
+    //사이드메뉴 아이콘과 사이드 선택
+    const menuIcon = document.querySelector(".menuIcon")
+    const side = document.querySelector(".side-menu")
+    //메뉴 아이콘에 클릭 이벤트 생성
+    menuIcon.addEventListener("click", () => {
+      //사이드메뉴에 on클래스를 추가 또는 제거
+      side.classList.toggle("on");
+    })
+
+    //닷버튼과 container요소와 .txt요소를 선택
+    const container = document.querySelector(".container")
+    const dots = document.querySelectorAll(".dot > li")
+    const txts = document.querySelectorAll(".wrap > .txt")
+
+    //모든 dot버튼에 클릭 이벤트를 생성
+    dots.forEach((dot, idx) => dot.addEventListener("click", () => {
+      dots.forEach(el => {
+        //클릭한 버튼은 active클래스를 추가하고 다른 버튼은 active클래스를
+        el.classList.toggle("active", el === dot)
+        //클릭한 버튼 요소와 순번이 같은 txt요소에 on클래스 추가하고 나머지 요소는 on클래스 제거
+      })
+      txts.forEach((txt, i) => {
+        txt.classList.toggle("on", idx === i)
+      })
+      //container의 배경이미지로 적용할 data-src속성값을 변수 src에 할당
+      console.log(dot.dataset.src)
+      const src = dot.dataset.src
+    container.style.opacity = 0;
+    setTimeout(function () {
+      container.style.backgroundImage = `url(${src})`
+      container.style.opacity = 1;
+    }, 200)
+    }))
+  </script>
+</body>
+
+</html>
